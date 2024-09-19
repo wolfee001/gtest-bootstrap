@@ -1,0 +1,38 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "_build_debug",
+            "type": "bazel",
+            "command": "build",
+            "targets": [
+                "${input:pickFlakyTest}"
+            ],
+            "options": [
+                "--compilation_mode=dbg",
+                "--strip=sometimes",
+                "--spawn_strategy=local"
+            ],
+            "hide": true
+        },
+        {
+            "label": "Build debug",
+            "type": "bazel",
+            "command": "run",
+            "targets": [
+                "@hedron_compile_commands//:refresh_all"
+            ],
+            "dependsOn": "_build_debug",
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "pickFlakyTest",
+            "type": "command",
+            "command": "bazel.pickTarget",
+        }
+    ]
+}

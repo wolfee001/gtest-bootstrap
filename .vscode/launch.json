@@ -1,0 +1,38 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "c++",
+      "type": "lldb",
+      "request": "launch",
+      // "program": "${input:pickFlakyTest}",
+      "program": "${workspaceFolder}/bazel-out/darwin_arm64-dbg/bin/bootstrap/bootstrap_test",
+      "args": [],
+      "stopOnEntry": false,
+      "osx": {
+        "sourceMap": {
+          ".": "${workspaceFolder}"
+        }
+      },
+      "linux": {
+        "sourceMap": {
+          "/proc/self/cwd": "${workspaceFolder}"
+        }
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "pickFlakyTest",
+      "type": "command",
+      "command": "bazel.pickTarget",
+      // "args": {
+      //     "query": "kind('.*_test', //...:*)",
+      //     "placeHolder": "Which test to check for flakyness?"
+      // }
+    }
+  ]
+}

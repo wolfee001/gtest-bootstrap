@@ -1,0 +1,18 @@
+{
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "C_Cpp.autocomplete": "disabled",
+  "C_Cpp.errorSquiggles": "disabled",
+  "clang-format.style": "file",
+  "clang-format.fallbackStyle": "WebKit",
+  "clang-format.executable": "clang-format",
+  "editor.formatOnSave": true,
+  "clangd.onConfigChanged": "restart",
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "clangd.arguments": [
+    "--header-insertion=never"
+  ],
+  "editor.inlayHints.enabled": "off",
+  "testMate.cpp.test.executables": "bazel-out/**/*{test,Test,TEST}*"
+}
