@@ -28,11 +28,7 @@
     {
       "id": "pickFlakyTest",
       "type": "command",
-      "command": "bazel.pickTarget",
-      // "args": {
-      //     "query": "kind('.*_test', //...:*)",
-      //     "placeHolder": "Which test to check for flakyness?"
-      // }
+      "command": "bazel.pickTarget"
     }
   ]
 }
